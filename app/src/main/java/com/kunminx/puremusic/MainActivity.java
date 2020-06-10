@@ -26,9 +26,13 @@ import androidx.navigation.Navigation;
 import com.kunminx.puremusic.bridge.state.MainActivityViewModel;
 import com.kunminx.puremusic.ui.base.BaseActivity;
 import com.kunminx.puremusic.ui.base.DataBindingConfig;
+import com.kunminx.puremusic.zyh.MyLifeCycleListener;
 
 /**
  * Create by KunMinX at 19/10/16
+ *
+ * @author zhengyouhong
+ * @date 2020-06-09 08:55
  */
 
 public class MainActivity extends BaseActivity {
@@ -113,6 +117,9 @@ public class MainActivity extends BaseActivity {
                         : DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
             }*/
         });
+
+        MyLifeCycleListener myLifeCycleListener = new MyLifeCycleListener();
+        getLifecycle().addObserver(myLifeCycleListener);
     }
 
     @Override
